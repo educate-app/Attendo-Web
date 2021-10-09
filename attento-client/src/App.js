@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import {useState} from "react"
 import './App.css';
+import Hero from "./Hero";
+import Login from './Login.js';
 
-function App() {
+
+
+
+const App = () => {
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [log, setLog] = useState(false)
+
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    {log ? (
+      <Hero setLog={setLog} log={log} />
+    ):(
+      <Login email={email} setEmail={setEmail} password={password} setPassword = {setPassword} log={log} setLog= {setLog}/> 
+    )
+    }
+      
     </div>
   );
 }
