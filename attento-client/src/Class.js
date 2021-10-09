@@ -1,27 +1,54 @@
 import { useState, useEffect } from "react";
 import QRCode from "react-qr-code";
 
-import { getFirestore, collection, getDoc } from 'firebase/firestore/lite';
+import { getDoc, getFirestore, collection, doc, onSnapshot, updateDoc } from 'firebase/firestore';
 
 import './class.css';
 
-function App() {
+const Class = ({ lecID }) => {
 
   const db = getFirestore();
   const [token, setToken] = useState("");
 
-  // Get a list of cities from your database
-  async function getClasses() {
-    const classesCol = collection(db, 'classes');
-    const classesSnapshot = await getDoc(classesCol);
-    const cityList = classesSnapshot.docs.map(doc => doc.data());
-    console.log(cityList);
-  }
-
   useEffect(() => {
-    setToken(generate_token(32));
-    getClasses();
+    var t = generate_token(32);
+    const classesCol = collection(db, 'classes');
+
+    onSnapshot(doc(classesCol, lecID), (doc) => {
+      var data = doc.data();
+      if (data['attendees'] !== undefined) {
+        if (data['attendees'][t] !== undefined) {
+          console.log('yes');
+          if (data['attendees'][t]['used'] === true) {
+            t = generate_token(32);
+          }
+        } else {
+          console.log('no');
+        }
+      }
+    });
   }, []);
+
+  function generate_token(length) {
+    //edit the token allowed characters
+    var a = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".split("");
+    var b = [];
+    for (var i = 0; i < length; i++) {
+      var j = (Math.random() * (a.length - 1)).toFixed(0);
+      b[i] = a[j];
+    }
+    var token = b.join("");
+    console.log(token);
+    // Upload token to server.
+    const document = doc(collection(db, 'classes'), lecID);
+    updateDoc(document, {
+      [`attendees.${token}`]: {
+        used: false,
+      }
+    });
+    setToken(token);
+    return token;
+  }
 
   return (
     <div className="App">
@@ -31,19 +58,15 @@ function App() {
       <div className="qrCode">
         <QRCode value={token} />
       </div>
+
+      <button onClick={() => {
+        const document = doc(collection(db, 'classes'), lecID);
+        updateDoc(document, {
+          live: false,
+        });
+      }}>End Class</button>
     </div>
   );
 }
 
-function generate_token(length) {
-  //edit the token allowed characters
-  var a = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".split("");
-  var b = [];
-  for (var i = 0; i < length; i++) {
-    var j = (Math.random() * (a.length - 1)).toFixed(0);
-    b[i] = a[j];
-  }
-  return b.join("");
-}
-
-export default App;
+export default Class;

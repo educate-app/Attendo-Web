@@ -1,5 +1,6 @@
 import {useState} from "react"
 import './App.css';
+import Class from "./Class";
 import Hero from "./Hero";
 import Login from './Login.js';
 
@@ -17,6 +18,7 @@ const App = () => {
     <div className="App">
     {log ? (
       <Hero setLog={setLog} log={log} />
+      // <Class lecID="z7eydjQbpZKGYQTtYdGX" />
     ):(
       <Login email={email} setEmail={setEmail} password={password} setPassword = {setPassword} log={log} setLog= {setLog}/> 
     )

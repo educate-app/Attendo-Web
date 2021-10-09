@@ -17,7 +17,13 @@ const Login = (props) => {
 
 
                 <div className="btnContainer">
-                    <button onClick = {() => setLog(!log)}>Sign in</button>
+                    <button onClick = {() => {
+                        if(email === "admin@school.com" && password == "123456"){
+                            setLog(!log);
+                        } else {
+                            // show error message.
+                        }
+                    }}>Sign in</button>
                 </div>
 
             </div>
