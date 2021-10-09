@@ -1,7 +1,10 @@
-
+import { useState } from 'react'
 import React from 'react'
 
+
 const Login = (props) => {
+
+    const [error,setError] = useState(false)
 
     const { email, setEmail, password, setPassword,log, setLog} = props
     return (
@@ -14,14 +17,21 @@ const Login = (props) => {
                 <label >Password</label>
                 <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)}/>
 
+    
+                {
+                    error ? (<p className = "err">Error : Email or password is wrong</p>) : (<span></span>)
+                }
 
 
                 <div className="btnContainer">
                     <button onClick = {() => {
-                        if(email === "admin@school.com" && password == "123456"){
+                        if(email === "admin@school.com" && password === "123456"){
                             setLog(!log);
                         } else {
-                            // show error message.
+                            if(!error){
+                                setError(!error)
+                            }
+                
                         }
                     }}>Sign in</button>
                 </div>

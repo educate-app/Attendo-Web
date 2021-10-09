@@ -1,6 +1,6 @@
 import {useState} from "react"
 import './App.css';
-import Class from "./Class";
+// import Class from "./Class";
 import Hero from "./Hero";
 import Login from './Login.js';
 
