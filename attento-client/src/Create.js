@@ -20,6 +20,7 @@ const Create = ({ onCreate }) => {
                         name: lecName,
                         live: true,
                         createdOn: Timestamp.now(),
+                        attendees: {}
                     }).then((docRef) => {
                         console.log(docRef);
                         onCreate(lecName, docRef.id);
