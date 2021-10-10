@@ -3,7 +3,6 @@
 
 <center>
 
- <img src = "assets\logos\Attendo-logos_transparent.png" height = "200" >
 
 # Attendance made Simple
 ## Attendo Teacher's Dashboard
