@@ -8,6 +8,8 @@
 # Attendance made Simple
 ## Attendo Teacher's Dashboard
 
+Teachers can use this portal to manage classes and student attendance.
+
 </center>
 
 ## Description
@@ -20,16 +22,13 @@ Marking and maintaining attendance of the lectures is a tedious task and student
 
 ## Installation and Developing Locally
 
-### Flutter
+### React JS
 
 To build and run this project:
 
-1. Get Flutter [here](https://flutter.dev) if you don't already have it
-2. Clone this repository
-3. `cd` into the repo folder
-4. run `flutter run-android` or `flutter run-ios` to build the app
-
-(Please note that a Mac with XCode is required to build for iOS)
+1. Clone this repository
+2. `cd` into the repo folder
+3. run `npm install` and then `npm start` to run the app locally.
 
 ### Firebase
 
