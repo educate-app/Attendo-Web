@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Attendo-Web/static/css/main.d3eec645.chunk.css",
+    "main.js": "/Attendo-Web/static/js/main.cbc75629.chunk.js",
+    "main.js.map": "/Attendo-Web/static/js/main.cbc75629.chunk.js.map",
+    "runtime-main.js": "/Attendo-Web/static/js/runtime-main.9e3adada.js",
+    "runtime-main.js.map": "/Attendo-Web/static/js/runtime-main.9e3adada.js.map",
+    "static/js/2.717060ab.chunk.js": "/Attendo-Web/static/js/2.717060ab.chunk.js",
+    "static/js/2.717060ab.chunk.js.map": "/Attendo-Web/static/js/2.717060ab.chunk.js.map",
+    "index.html": "/Attendo-Web/index.html",
+    "static/css/main.d3eec645.chunk.css.map": "/Attendo-Web/static/css/main.d3eec645.chunk.css.map",
+    "static/js/2.717060ab.chunk.js.LICENSE.txt": "/Attendo-Web/static/js/2.717060ab.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9e3adada.js",
+    "static/js/2.717060ab.chunk.js",
+    "static/css/main.d3eec645.chunk.css",
+    "static/js/main.cbc75629.chunk.js"
+  ]
+}
