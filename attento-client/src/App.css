@@ -121,7 +121,7 @@ button {
 }
 
 .new-lecture{
-  padding: 20px;
+  padding-top: 35px;
   padding-bottom: 10px;
   width: 75%;
 }
@@ -138,11 +138,8 @@ button {
 }
 
 .record{
-  display: flex;
   flex-direction: column;
-  align-items: center;
 
-  padding: 10px;
   width: 75%;
 }
 
