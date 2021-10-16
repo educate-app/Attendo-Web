@@ -3,7 +3,9 @@ import Create from './Create'
 import Record from './Record'
 import Class from "./Class"
 
+
 const Hero = ({ log, setLog }) => {
+
 
     const [currentLecName, setCurrentLecName] = useState([]);
 
@@ -19,7 +21,7 @@ const Hero = ({ log, setLog }) => {
             <Create onCreate={(lecName, lecId) => {
                 setCurrentLecName([lecName, lecId]);
             }} /><br />
-            <Record />
+            <Record />          
 
         </section>
     )
