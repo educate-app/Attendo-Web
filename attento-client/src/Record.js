@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+
 import { getFirestore, collection, orderBy, query, onSnapshot, Timestamp } from 'firebase/firestore';
 
-const Record = () => {
+import Row from './Row';
 
+const Record = () => {
     const db = getFirestore();
     const [data, setData] = useState([]);
 
@@ -31,22 +33,22 @@ const Record = () => {
                             <th>Date and Time</th>
                             <th>Lecture Name</th>
                             <th>Attendance</th>
+                            <th>View</th>
                         </tr>
                     </thead>
                     <tbody>
                         {data.map((d) =>
                             <tr>
-                                <td data-column="Date and Time">{d['createdOn'].toDate().toLocaleString()}</td>
-                                <td data-column="Lecture Name">{d['name']}</td>
-                                <td data-column="Attendance">{Object.keys(d['attendees']).length}</td>
-
+                                <Row key={d['createdOn']} time={d['createdOn']} name = {d['name']} attendance={d['attendees']} />
                             </tr>
                         )}
+                        
 
                     </tbody>
                 </table>
-
+                
             </div>
+            
 
         </div>
     )

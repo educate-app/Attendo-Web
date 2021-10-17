@@ -3,8 +3,10 @@
   margin: 0;
   padding: 0;
   font-family: "Nunito", sans-serif;
-  
+ 
+
 }
+
 
 button {
   border: none;
@@ -98,8 +100,10 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  overflow-x: hidden;
+
 }
+
 
 .hero nav {
   background: #603bbb;
@@ -117,9 +121,24 @@ button {
 .hero nav button {
   width: 86px;
   padding: 8px 0;
-  background: #3a2b58;
+  background: #361980;
+}
+.hero::-webkit-scrollbar {
+  width: 20px;
 }
 
+.hero::-webkit-scrollbar-track {
+  background-color: #e4e4e400;
+  border-radius: 50%
+}
+
+.hero::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  border: 6px solid rgba(0, 0, 0, 0.18);
+  border-left: 0;
+  border-right: 0;
+  background-color: #797979;
+}
 .new-lecture{
   padding-top: 35px;
   padding-bottom: 10px;
@@ -184,6 +203,86 @@ td, th {
 	text-align: left; 
 	font-size: 18px;
 	}
+
+.view-btn{
+  padding: 5px 0px;
+  border-radius: 50px;
+}
+.view-btn:hover{
+  cursor: pointer;
+  background-color: #3a2b58de;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.modal-box {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 85%;
+  width: 60%;
+  overflow-y:auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  z-index: 101;
+  padding: 40px;
+  border-radius: 15px;
+  scrollbar-color: #d4aa70 #e4e4e4;
+  scrollbar-width: thin;
+}
+
+
+.modal-box::-webkit-scrollbar {
+  width: 20px;
+}
+
+.modal-box::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
+.modal-box::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  border: 6px solid rgba(0, 0, 0, 0.18);
+  border-left: 0;
+  border-right: 0;
+  background-color: #8070d4;
+}
+
+
+.close {
+  color: #7c7c7c;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 0px 8px;
+  border: solid 1px black;
+  border-radius: 50px;
+}
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: rgb(180, 30, 30);
+}
 
 /* 
 Max width before this PARTICULAR table gets nasty
