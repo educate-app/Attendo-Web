@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { getFirestore, collection, orderBy, query, onSnapshot, Timestamp } from 'firebase/firestore';
+import { getFirestore, collection, orderBy, query, onSnapshot } from 'firebase/firestore';
 
 import Row from './Row';
 
