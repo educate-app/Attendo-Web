@@ -9,6 +9,8 @@
 
 Teachers can use this portal to manage classes and student attendance.
 
+Website is live at https://educate-app.github.io/Attendo-Web
+
 </center>
 
 ## Description
@@ -18,6 +20,10 @@ This project is a functional attendance system for students. It is a mobile appl
 ## Problem Statement
 
 Marking and maintaining attendance of the lectures is a tedious task and students are also using bad practices to mark their attendance. So there is a need of fast, organised and time efficient method to record attendance. 
+
+## Testing Credentials
+Email: admin@school.com
+Pass: 123456
 
 ## Installation and Developing Locally
 
