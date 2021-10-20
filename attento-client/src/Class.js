@@ -3,7 +3,7 @@ import QRCode from "react-qr-code";
 
 import { getDoc, getFirestore, collection, doc, onSnapshot, addDoc, updateDoc, Timestamp } from 'firebase/firestore';
 
-import './class.css';
+import './styles/class.css';
 
 const Class = ({ lecName, lecID, onClose }) => {
 
