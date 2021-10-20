@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Create from './Create'
-import Record from './Record'
+import Create from './Components/Create'
+import Record from './Components/Record'
 import Class from "./Class"
 
 

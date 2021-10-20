@@ -1,5 +1,5 @@
 import {useState} from "react"
-import './App.css';
+import './styles/App.css';
 // import Class from "./Class";
 import Hero from "./Hero";
 import Login from './Login.js';
